@@ -1,8 +1,8 @@
-# NeoPixel library strandtest example
-# Author: Tony DiCola (tony@tonydicola.com)
+# NeoPixel library colors example
+# Author: Barry Staes (barry@staes.nl)
 #
-# Direct port of the Arduino NeoPixel library strandtest example.  Showcases
-# various animations on a strip of NeoPixels.
+# Simplest example, of use to measure electrical current and brightnes.
+
 import time
 
 from neopixel import *
@@ -34,9 +34,28 @@ if __name__ == '__main__':
 
 	print 'Press Ctrl-C to quit.'
 	while True:
-		colorAll(strip, Color(255,255,255), 5)
-		colorAll(strip, Color(  0,  0,  0),  1)
-		colorAll(strip, Color(255,  0,  0), 5)
-		colorAll(strip, Color(  0,255,  0), 5)
-		colorAll(strip, Color(  0,  0,255), 5)
-		colorAll(strip, Color(  0,  0,  0), 5)
+                # Base colors
+		print 'White'
+		colorAll(strip, Color(255,255,255), 5) # White
+		print 'Red'
+		colorAll(strip, Color(255,  0,  0), 5) # Red
+		print 'Green'
+		colorAll(strip, Color(  0,255,  0), 5) # Green
+		print 'Blue'
+		colorAll(strip, Color(  0,  0,255), 5) # Blue
+		print 'Black'
+		colorAll(strip, Color(  0,  0,  0), 5) # Black
+
+                # Mixed colors
+		print 'Mixed: White 50%'
+		colorAll(strip, Color(127,127,127), 5) # White 50%
+		print 'Mixed: White 2%'
+		colorAll(strip, Color(  5,  5,  5), 5) # White  2%
+		print 'Mixed: Red + Green = Yellow'
+		colorAll(strip, Color(255,255,  0), 5) # Yellow
+		print 'Mixed: Green + Blue = Cyan'
+		colorAll(strip, Color(  0,255,255), 5) # Cyan
+		print 'Mixed: Blue + Red = Purple'
+		colorAll(strip, Color(255,  0,255), 5) # Purple
+		print 'Black'
+		colorAll(strip, Color(  0,  0,  0), 5) # Black

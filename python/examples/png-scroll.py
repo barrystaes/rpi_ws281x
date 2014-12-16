@@ -1,12 +1,13 @@
-# NeoPixel library strandtest example
-# Author: Tony DiCola (tony@tonydicola.com)
+# NeoPixel library png-scroll example
+# Author: Barry Staes (barry@staes.nl)
 #
-# Direct port of the Arduino NeoPixel library strandtest example.  Showcases
-# various animations on a strip of NeoPixels.
+# Maps the X axis of a PNG file to the led strip, and scrolls through the Y axis with
+# the specified FPS. Note a dark PNG looks (a lot) brighter on LEDs vs a tv/monitor. 
+
 import time
 
 from neopixel import *
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter # Install this with "pip install Pillow" 
 
 
 # LED strip configuration:
