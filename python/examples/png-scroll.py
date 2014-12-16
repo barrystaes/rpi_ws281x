@@ -17,11 +17,11 @@ LED_DMA     = 5       # DMA channel to use for generating signal (try 5)
 LED_INVERT  = False   # True to invert the signal (when using NPN transistor level shift)
 
 
-def showImageLine(strip, image, line, fps):
-	"""Show a line from image"""
+def showImageScroll(strip, image, fps):
+	"""Show image scrolling"""
 	for y in range(0, original.size[1]):
 		for x in range(0, original.size[0]):
-			r, g, b = rgb_im.getpixel((x, y))
+			r, g, b = rgb_im.getpixel((x, y)) # slow and values not sanitized
 			strip.setPixelColor(x, Color(r,g,b))
 			#print "pixel %s,%s is %02x,%02x,%02x" % (x,y,r,g,b)
 		strip.show()
@@ -38,10 +38,10 @@ if __name__ == '__main__':
 
 
 	# Read bitmap
-	original = Image.open("test1-stripes6.png")
+	original = Image.open("sparkles.png")
 	rgb_im = original.convert('RGB')
 
 
 	print 'Press Ctrl-C to quit.'
 	while True:
-		showImageLine(strip, rgb_im, 0, 25);
+		showImageScroll(strip, rgb_im, 25);
